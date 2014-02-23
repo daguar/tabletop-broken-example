@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script src="js/tabletop.js"></script>
+<script type="text/javascript">
+  window.onload = function() {
+    init(old_doc_url, oldDocCallback);
+    init(new_doc_url, newDocCallback);
+  };
+
+  // Old GDrive doc
+  var old_doc_url = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0Ah8tYWLqUd7wdEF0T1kwTGRqSDVSc3pEYTFieVEzVkE&output=html';
+  // Old URL with new doc GDoc key (2/23/14)
+  var new_doc_url = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0Ah8tYWLqUd7wdFdpM2U0UElWeGFQSEpLbFFWSUhFTlE&output=html';
+
+  function init(doc_url, callback) {
+    Tabletop.init( { key: doc_url,
+                     callback: callback,
+                     simpleSheet: true } )
+  }
+
+  function oldDocCallback(data, tabletop) {
+    alert("Old doc processed!")
+    console.log(data);
+  }
+
+  function newDocCallback(data, tabletop) {
+    alert("New doc processed!")
+    console.log(data);
+  }
+
+</script>
+</body>
+</html>
